@@ -1,13 +1,13 @@
 $(function() {
     $(".add-new-burger").on("click", function(event) {
         event.preventDefault();
-      var newburgerName = $(".new-burger-input");
+      var newburgerName = $("#burger-input");
   
       var newBurger = {
         buger_name: newburgerName.val()
       };
   
-      // Send the PUT request.
+      // Send the PosT request.
       $.ajax("/api/burgers/", {
         type: "POST",
         data: newBurger
@@ -28,8 +28,8 @@ $(function() {
         devoured: 1
       };
   
-      // Send the POST request.
-      $.ajax("/api/burgers/" + id, {
+      // Send the PuT request.
+      $.ajax("/api/burgers/:" + id, {
         type: "PUT",
         data: DevouredState
       }).then(

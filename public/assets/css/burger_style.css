@@ -1,0 +1,41 @@
+ /* styles for the index page and the image */
+ body {
+	background-color: lightsalmon;
+	margin-top: 20px;
+}
+
+img {
+	width: 600px;
+	height: 500px;
+}
+
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+
+ul{
+    text-align: center;
+}
+
+textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-new-burger{
+    margin:auto;
+  display:block;
+
+}
+#footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -5,23 +5,23 @@
         <h1>Eat Da Burger!</h1>
     </div>
     {{!-- list of newly created and devoured burgers--}}
-    <div class="row">
+    <div class="row justify-content-center">
         {{!-- list of newly created burgers--}}
-        <div class="col-md-6">
+        <div class="col-md-6 justify-content-center">
             <h3>Ready to Eat!</h3>
             <ul>
                 {{#each burgers}}
                     {{#unless devoured}}
-                        <li>
-                            <h5>{{this.id}}.{{this.burger_name}}</h5>
-                            <button type= "submit" id={{this.id}} class="eat-this-burger btn btn-outline-danger">Devour!!!</button>
+                        <li data-id="{{this.id}}”>
+                            <h5>{{this.burger_name}}</h5>
+                            <button type= "submit" id="devour-this" class="eat-this-burger btn btn-outline-danger" >Devour!!!</button>
                         </li>
                     {{/unless}}
                 {{/each}}
             </ul>
         </div>
         {{!-- list of devoured burgers--}}
-         <div class="col-md-6">
+         <div class="col-md-6 justify-content-center">
             <h3>Devoured Burgers</h3>
             <ul>
                 {{#each burgers}}
@@ -38,18 +38,18 @@
     {{!-- add new burgers here--}}
     <div class="row justify-content-md-center">
         <h1>Create your own burger here</h1>
-        <form class="new-burger-input" action="burgers/insert">
-            <div>
-                <textarea type="text" placeholder="Type the name of your burger here..." name="name"></textarea>
+        <form class="new-burger-input justify-content-center">
+            <div class="justify-content-center">
+                <textarea id="burger-input" type="text" placeholder="Type the name of your burger here..." name="name"></textarea>
                 <br>
-                <button class="btn add-new-burger btn-outline-danger" type="submit">Create Now!</button>
+                <button class="btn add-new-burger btn-outline-danger " type="submit">Create Now!</button>
                 </div>
             </div>
         </form>
     </div>
 
 </div>
-
-<footer>
+<br>
+<div id=footer>
     <p>© Copyright 2021</p>
-</footer>
+</div>
