@@ -3,31 +3,24 @@ var burger = require("../models/burger.js");
 
 var router = express.Router();
 router.get("/", function(req, res) {
-    cat.all(function(data) {
+    burger.all(function(data) {
       var hbsObject = {
-        cats: data
+        burgers: data
       };
       console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
   router.post("/api/burgers", function(req, res) {
-    cat.insert(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+    burger.insert(["burger_name"], [req.body.burger_name], function(result) {
       // Send back the ID of the new quote
-      res.json({ id: result.insertId });
+      res.redirect('/');
     });
   });
   
   router.put("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
   
-    console.log("condition", condition);
-  
-    cat.update(
-      {
-        devoured: req.body.devoured
-      },
-      condition,
+    burger.update(["devoured"],[req.body.devoured], [req.params.id],
       function(result) {
         if (result.changedRows === 0) {
           // If no rows were changed, then the ID must not exist, so 404

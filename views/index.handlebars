@@ -5,7 +5,7 @@
         <h1>Eat Da Burger!</h1>
     </div>
     {{!-- list of newly created and devoured burgers--}}
-    <div class="row justify-content-md-center">
+    <div class="row">
         {{!-- list of newly created burgers--}}
         <div class="col-md-6">
             <h3>Ready to Eat!</h3>
@@ -38,14 +38,18 @@
     {{!-- add new burgers here--}}
     <div class="row justify-content-md-center">
         <h1>Create your own burger here</h1>
-        <form class="new-burger-input" action="burgers/insert" method="POST">
+        <form class="new-burger-input" action="burgers/insert">
             <div>
                 <textarea type="text" placeholder="Type the name of your burger here..." name="name"></textarea>
                 <br>
-                <button class="btn btn-outline-danger" type="submit">Create Now!</button>
+                <button class="btn add-new-burger btn-outline-danger" type="submit">Create Now!</button>
                 </div>
             </div>
         </form>
     </div>
 
 </div>
+
+<footer>
+    <p>© Copyright 2021</p>
+</footer>
